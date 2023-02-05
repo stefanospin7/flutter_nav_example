@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PageController _pageController = PageController();
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,7 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         onPageChanged: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
+          setState(() {});
         },
         children: <Widget>[
           Page1(),
@@ -38,7 +35,6 @@ class _HomePageState extends State<HomePage> {
         tabBackgroundColor: Colors.white,
         onTabChange: (index) {
           setState(() {
-            _selectedIndex = index;
             _pageController.jumpToPage(index);
           });
         },
